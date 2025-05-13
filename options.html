@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extension Options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #181818, #222, #2a2a2a, #181818);
+            background-size: 400% 400%;
+            animation: bgShift 20s ease infinite;
+            overflow: hidden;
+            color: white;
+            position: relative;
+        }
+
+        @keyframes bgShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: floatUp 8s linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            width: 6px;
+            height: 6px;
+            left: 20%;
+            top: 100%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 10px;
+            height: 10px;
+            left: 40%;
+            top: 110%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            width: 4px;
+            height: 4px;
+            left: 60%;
+            top: 120%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            width: 8px;
+            height: 8px;
+            left: 80%;
+            top: 130%;
+            animation-delay: 6s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translateY(-120vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: rgba(40, 40, 40, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header-icon {
+            font-size: 28px;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #ffdd57;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background-color: #2e2e2e;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            background-color: #3c3c3c;
+            box-shadow: 0 0 5px #ffdd57;
+        }
+
+        a {
+            color: #00c3ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ffdd57;
+            border: none;
+            border-radius: 8px;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #ffe678;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 221, 87, 0.4);
+        }
+
+        .success-message {
+            margin-top: 15px;
+            color: #8effa0;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .success-message.visible {
+            opacity: 1;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">🤖</div>
+            <h1>Gemmarize</h1>
+        </div>
+
+        <div class="form-group">
+            <label for="api-Key">Gemini API Key:</label>
+            <input type="text" id="api-Key" placeholder="Enter your Gemini API key" />
+            <p>
+                You can get your API key from
+                <a href="https://makersuite.ai/gemini" target="_blank">Google AI Studio</a>
+            </p>
+        </div>
+
+        <button id="save-button">💾 Save Settings</button>
+        <p id="success-message" class="success-message">✅ Settings Saved Successfully!</p>
+    </div>
+
+
+    <script src="options.js"></script>
+
+
+</body>
+
+</html>
