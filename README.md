@@ -65,8 +65,3 @@ Gemmarize only extracts text from the current webpage when you click the "Summar
 - **"Please set your Gemini API key"**: Navigate to the options page by right-clicking the extension icon and selecting "Options"
 - **"Couldn't extract any article text"**: The extension may have difficulty identifying the main content on some webpages
 - **"Error fetching summary"**: Verify your API key and internet connection
-
-## Acknowledgements
-
-- Powered by [Google Gemini API](https://ai.google.dev/)
-- Icons and design elements created for Gemmarize
