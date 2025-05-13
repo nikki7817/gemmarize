@@ -55,7 +55,6 @@ Gemmarize extracts the main content from webpages by targeting article elements 
 
 - Google Chrome browser (or Chromium-based browsers)
 - Gemini API key (get one at [Google AI Studio](https://makersuite.ai/gemini))
-- Internet connection for API access
 
 ## Privacy
 
@@ -66,10 +65,6 @@ Gemmarize only extracts text from the current webpage when you click the "Summar
 - **"Please set your Gemini API key"**: Navigate to the options page by right-clicking the extension icon and selecting "Options"
 - **"Couldn't extract any article text"**: The extension may have difficulty identifying the main content on some webpages
 - **"Error fetching summary"**: Verify your API key and internet connection
-
-## License
-
-[MIT License](LICENSE)
 
 ## Acknowledgements
 
